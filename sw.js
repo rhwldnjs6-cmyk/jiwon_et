@@ -58,6 +58,24 @@ async function writeJSON(key, value) {
 }
 
 async function onPush(data) {
+  // 점검용 기록 — 폰 화면의 "알림 점검"에서 보인다 (알림이 폰까지 왔는지, 띄웠는지)
+  const log = { at: Date.now(), hadData: !!(data && data.text && data.text().length), items: 0, shown: false, error: '' }
+  try {
+    await showItems(data, log)
+  } catch (e) {
+    log.error = String((e && e.message) || e)
+    // 무슨 일이 있어도 한 장은 띄운다
+    try {
+      await self.registration.showNotification('BRIDGE', { body: '새 알림이 있어요. 눌러서 확인해 주세요.' })
+      log.shown = true
+    } catch (e2) {
+      log.error += ` / ${String((e2 && e2.message) || e2)}`
+    }
+  }
+  await writeJSON('last', log).catch(() => {})
+}
+
+async function showItems(data, log) {
   let items = []
   // 요즘 서버는 내용을 알림에 실어 보낸다 — 그대로 띄운다.
   try {
@@ -85,8 +103,11 @@ async function onPush(data) {
   }
 
   const icon = new URL('icons/icon-192.png', self.registration.scope).href
+  log.items = items.length
   if (!items.length) {
-    return self.registration.showNotification('BRIDGE', { body: '새 알림이 있어요. 눌러서 확인해 주세요.', icon, tag: 'bridge' })
+    await self.registration.showNotification('BRIDGE', { body: '새 알림이 있어요. 눌러서 확인해 주세요.', icon, tag: 'bridge' })
+    log.shown = true
+    return
   }
   await writeJSON('seen', { ts: Math.max(...items.map((i) => i.ts)) })
 
@@ -101,11 +122,11 @@ async function onPush(data) {
         body: `${top.body}${more}`,
         icon,
         tag: top.kind,
-        renotify: true,
         data: { url: top.url },
       })
     }),
   )
+  log.shown = true
 }
 
 self.addEventListener('push', (e) => e.waitUntil(onPush(e.data)))
