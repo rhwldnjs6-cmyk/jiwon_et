@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BRIDGE 사용 안내 · 내신반</title>
+<meta name="description" content="과제 제출·채점, 성장 그래프, 수업 리포트, 클리닉 예약까지 — BRIDGE 처음 쓰는 방법을 한눈에 확인하세요.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BRIDGE 사용 안내 · 내신반">
+<meta property="og:description" content="과제 제출·채점, 성장 그래프, 수업 리포트, 클리닉 예약까지 — BRIDGE 처음 쓰는 방법을 한눈에 확인하세요.">
+<meta property="og:image" content="https://rhwldnjs6-cmyk.github.io/jiwon_et/guide/naesin/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://rhwldnjs6-cmyk.github.io/jiwon_et/guide/naesin.html">
+<meta name="theme-color" content="#EAF4FC">
+<link rel="icon" href="../icons/icon-192.png">
+<style>
+  :root {
+    --ink: #2B4C6F; --muted: #4C6580; --faint: #8AA3B8; --line: #E1EDF6; --border: #C4DAEA;
+    --brand: #6FB3E0; --brandSoft: #E4F2FB; --canvas: #F1F7FC; --paper: #FFFFFF; --error: #DD6B7B; --warn: #8A6A2F;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #ccc; font-family: 'Noto Sans KR', sans-serif; color: var(--ink); letter-spacing: -0.02em; }
+  .card {
+    width: 1080px; height: 1350px; position: relative; overflow: hidden;
+    background: linear-gradient(180deg, #EAF4FC 0%, #F7FBFE 55%, #FFFFFF 100%);
+    padding: 72px 72px 64px; margin-bottom: 40px;
+  }
+  .cloud { position: absolute; border-radius: 50%; background: #DCEBF7; opacity: .55; }
+  .top { display: flex; align-items: center; gap: 14px; position: relative; z-index: 2; }
+  .logo { display: flex; align-items: center; gap: 12px; font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: .28em; font-size: 26px; color: var(--ink); }
+  .logo svg { width: 46px; height: 30px; }
+  .page { margin-left: auto; font-family: Archivo, sans-serif; font-weight: 700; font-size: 22px; color: var(--faint); letter-spacing: .08em; }
+  .kicker { margin-top: 54px; font-size: 26px; font-weight: 700; color: var(--brand); position: relative; z-index: 2; }
+  h1 { font-size: 62px; font-weight: 900; line-height: 1.22; margin-top: 10px; letter-spacing: -0.04em; position: relative; z-index: 2; }
+  .sub { font-size: 27px; color: var(--muted); margin-top: 16px; line-height: 1.55; position: relative; z-index: 2; }
+  .row { display: flex; gap: 44px; margin-top: 44px; position: relative; z-index: 2; }
+  .col { flex: 1; min-width: 0; }
+  .phone {
+    width: 410px; flex-shrink: 0; border-radius: 52px; background: #1E3550; padding: 14px;
+    box-shadow: 0 30px 60px rgba(43,76,111,.22);
+  }
+  .phone .scr { border-radius: 40px; overflow: hidden; background: #fff; height: 820px; }
+  .phone img { width: 100%; display: block; }
+  .tips { display: flex; flex-direction: column; gap: 20px; }
+  .tip { background: var(--paper); border: 1.5px solid var(--line); border-radius: 26px; padding: 24px 26px; box-shadow: 0 8px 22px rgba(43,76,111,.06); }
+  .tip .t { display: flex; align-items: center; gap: 12px; font-size: 27px; font-weight: 800; }
+  .tip .d { margin-top: 8px; font-size: 22.5px; color: var(--muted); line-height: 1.55; font-weight: 500; }
+  .num { width: 42px; height: 42px; border-radius: 50%; background: var(--brand); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-family: Archivo, sans-serif; font-weight: 800; font-size: 22px; flex-shrink: 0; }
+  .em { font-size: 30px; flex-shrink: 0; }
+  b.k { color: var(--ink); font-weight: 800; }
+  .chip { display: inline-block; background: var(--brandSoft); color: var(--ink); border-radius: 999px; padding: 3px 14px; font-weight: 700; font-size: 21px; }
+  .note { margin-top: 26px; background: #FFF6E6; border: 1.5px solid #F0D9A8; color: var(--warn); border-radius: 22px; padding: 18px 24px; font-size: 22px; line-height: 1.55; font-weight: 500; position: relative; z-index: 2; }
+  .foot { position: absolute; left: 72px; right: 72px; bottom: 46px; display: flex; justify-content: space-between; font-size: 20px; color: var(--faint); z-index: 2; }
+  .mark { position: absolute; z-index: 3; border: 4px solid var(--error); border-radius: 22px; }
+  .tag { position: absolute; z-index: 4; background: var(--error); color: #fff; font-weight: 800; font-size: 20px; border-radius: 999px; padding: 4px 14px; }
+
+  body { background:#EEF6FC; font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif; -webkit-text-size-adjust:100%; }
+  .wrap { max-width:560px; margin:0 auto; padding:0 14px calc(96px + env(safe-area-inset-bottom)); }
+  .pghead { padding:20px 2px 14px; display:flex; align-items:center; gap:10px; }
+  .pghead img { width:34px; height:34px; border-radius:9px; }
+  .pghead b { font-size:17px; letter-spacing:.18em; color:var(--ink); }
+  .pghead span { margin-left:auto; font-size:13px; color:var(--muted); background:#fff; border:1px solid var(--line); border-radius:999px; padding:5px 12px; font-weight:700; }
+  .card { width:auto !important; height:auto !important; padding:26px 20px 22px !important; margin:0 0 14px !important; border-radius:22px; box-shadow:0 6px 18px rgba(43,76,111,.08); }
+  .cloud { display:none; }
+  .top .logo { font-size:13px; gap:8px; } .top .logo svg { width:26px; height:17px; }
+  .page { font-size:12px !important; }
+  .kicker { margin-top:20px !important; font-size:14px !important; }
+  h1 { font-size:26px !important; line-height:1.3 !important; }
+  .sub { font-size:15px !important; margin-top:10px !important; }
+  .row { flex-direction:column !important; gap:14px !important; margin-top:18px !important; }
+  .row > div[style*="width:440px"] { width:auto !important; }
+  .phone { width:min(270px, 78%) !important; margin:4px auto; border-radius:34px !important; padding:8px !important; }
+  .phone .scr { height:auto !important; max-height:440px; border-radius:27px !important; }
+  .phone img { margin-top:0 !important; }
+  .tips { gap:10px !important; }
+  .tip { padding:14px 16px !important; border-radius:16px !important; margin-top:0; }
+  .tip .t { font-size:16.5px !important; gap:9px !important; }
+  .tip .d { font-size:14.5px !important; line-height:1.65 !important; margin-top:6px !important; }
+  .num { width:24px !important; height:24px !important; font-size:13px !important; }
+  .em { font-size:18px !important; }
+  .chip { font-size:13px !important; padding:5px 11px !important; }
+  .note { font-size:14px !important; padding:12px 14px !important; margin-top:16px !important; border-radius:14px !important; }
+  .foot { position:static !important; margin-top:16px; font-size:12.5px !important; flex-wrap:wrap; gap:4px 12px; }
+  #c1 h1 { font-size:44px !important; margin-top:18px !important; }
+  #c1 .sub { font-size:16.5px !important; margin-top:16px !important; }
+  #c1 > div[style*="margin-top:190px"] { margin-top:36px !important; }
+  #c1 > div[style*="margin-top:90px"] { margin-top:26px !important; gap:8px !important; }
+  #c1 > div[style*="bottom:118px"] { position:static !important; margin-top:28px; font-size:14px !important; }
+  #c1 > div[style*="bottom:118px"] b { font-size:16px !important; }
+  div[style*="dashed"] { padding:14px !important; gap:14px !important; margin-top:14px !important; border-radius:16px !important; }
+  div[style*="dashed"] img { width:56px !important; height:56px !important; border-radius:14px !important; }
+  div[style*="dashed"] div { font-size:13.5px !important; }
+  .cta { position:fixed; left:0; right:0; bottom:0; padding:12px 16px calc(12px + env(safe-area-inset-bottom)); background:linear-gradient(180deg, rgba(238,246,252,0), #EEF6FC 35%); z-index:9; }
+  .cta a { display:block; max-width:528px; margin:0 auto; text-align:center; background:#2B4C6F; color:#fff; text-decoration:none; font-weight:800; font-size:17px; padding:16px; border-radius:16px; box-shadow:0 8px 20px rgba(43,76,111,.25); }
+  .end { text-align:center; font-size:13px; color:#8AA3B8; line-height:1.7; margin-top:20px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="pghead"><img src="../icons/icon-192.png" alt=""><b>BRIDGE</b><span>내신반 안내</span></div>
+
+
+<!-- ───────────── 1. 표지 ───────────── -->
+<section class="card" id="c1" aria-label="표지" style="background: linear-gradient(170deg, #CFE6F7 0%, #EAF4FC 45%, #FFFFFF 100%);">
+  <div class="cloud" style="width:520px;height:520px;left:-160px;top:420px"></div>
+  <div class="cloud" style="width:420px;height:420px;right:-120px;top:160px"></div>
+  <div class="cloud" style="width:300px;height:300px;right:180px;bottom:-80px"></div>
+  <div class="top"><div class="logo"><svg viewBox="0 0 46 30"><path d="M12 29h24a9 9 0 0 0 1-17.9A12 12 0 0 0 14 9.5 9.8 9.8 0 0 0 12 29Z" fill="#6FB3E0"/></svg>BRIDGE</div></div>
+  <div style="position:relative;z-index:2;margin-top:190px">
+    <div class="chip" style="font-size:26px;padding:8px 22px">내신반 · 학생 · 학부모님 안내</div>
+    <h1 style="font-size:96px;margin-top:30px;line-height:1.15">BRIDGE<br>사용 안내</h1>
+    <div class="sub" style="font-size:33px;margin-top:30px;line-height:1.6">과제 제출부터 채점·피드백, 성장 그래프,<br>수업 리포트, 클리닉 예약까지<br><b class="k">한 곳에서 확인하세요.</b></div>
+  </div>
+  <div style="position:relative;z-index:2;margin-top:90px;display:flex;gap:16px;flex-wrap:wrap">
+    <span class="chip" style="background:#fff;font-size:24px;padding:10px 20px">📝 과제</span>
+    <span class="chip" style="background:#fff;font-size:24px;padding:10px 20px">📈 성적</span>
+    <span class="chip" style="background:#fff;font-size:24px;padding:10px 20px">🗓️ 클리닉 예약</span>
+    <span class="chip" style="background:#fff;font-size:24px;padding:10px 20px">🎬 수업 영상</span>
+    <span class="chip" style="background:#fff;font-size:24px;padding:10px 20px">🔔 알림</span>
+  </div>
+  <div style="position:absolute;left:72px;right:72px;bottom:118px;z-index:2;font-size:25px;line-height:1.7;color:var(--muted)"><b class="k" style="font-size:28px">강사 고지원</b><br>송파 메가스터디학원 · 각인 입시전문학원</div>
+  <div class="foot"><span>BRIDGE · 학습 관리 앱</span><span>아래로 넘겨 보세요 ↓</span></div>
+</section>
+
+<!-- ───────────── 2. 시작하기 ───────────── -->
+<section class="card" id="c2">
+  <div class="cloud" style="width:460px;height:460px;right:-180px;top:-120px"></div>
+  <div class="top"><div class="logo"><svg viewBox="0 0 46 30"><path d="M12 29h24a9 9 0 0 0 1-17.9A12 12 0 0 0 14 9.5 9.8 9.8 0 0 0 12 29Z" fill="#6FB3E0"/></svg>BRIDGE</div><div class="page">01 / 08</div></div>
+  <div class="kicker">STEP 1 · 처음 들어가기</div>
+  <h1>링크 열고, 학생 코드로<br>로그인하세요</h1>
+  <div class="row">
+    <div class="col tips">
+      <div class="tip"><div class="t"><span class="num">1</span>카톡으로 받은 링크 열기</div><div class="d">채널에서 받은 BRIDGE 링크를 눌러요.</div></div>
+      <div class="tip"><div class="t"><span class="num">2</span>학생 코드 입력</div><div class="d"><b class="k">JW-0000</b> 형태의 코드예요.<br>선생님이 보내드린 문자에 있어요.</div></div>
+      <div class="tip"><div class="t"><span class="num">3</span>「로그인 정보 저장」 체크</div><div class="d">다음부터는 열자마자<br><b class="k">내 화면이 바로</b> 떠요.</div></div>
+      <div class="tip"><div class="t"><span class="num">4</span>로그인!</div><div class="d">다른 폰·태블릿에서도<br>같은 코드로 들어오면 돼요.</div></div>
+    </div>
+    <div class="phone"><div class="scr"><img src="naesin/01-login.jpg" loading="lazy" alt=""></div></div>
+  </div>
+  <div class="foot"><span>코드를 모르면 선생님께 말씀해 주세요</span><span>BRIDGE 사용 안내</span></div>
+</section>
+
+<!-- ───────────── 3. 앱 설치 + 알림 ───────────── -->
+<section class="card" id="c3">
+  <div class="cloud" style="width:460px;height:460px;left:-200px;bottom:-140px"></div>
+  <div class="top"><div class="logo"><svg viewBox="0 0 46 30"><path d="M12 29h24a9 9 0 0 0 1-17.9A12 12 0 0 0 14 9.5 9.8 9.8 0 0 0 12 29Z" fill="#6FB3E0"/></svg>BRIDGE</div><div class="page">02 / 08</div></div>
+  <div class="kicker">STEP 2 · 앱처럼 쓰기 + 알림 받기</div>
+  <h1>홈 화면에 추가하면<br>앱처럼 쓰고 알림도 받아요</h1>
+  <div class="note" style="margin-top:30px">💬 카카오톡 안에서 열렸다면 먼저 <b>다른 브라우저로 열기</b>를 눌러 주세요.<br>(아이폰 → <b>사파리</b>, 안드로이드 → <b>크롬</b>)</div>
+  <div class="row" style="margin-top:28px;gap:28px">
+    <div class="col tip" style="padding:30px">
+      <div class="t" style="font-size:31px"><span class="em">📱</span>아이폰</div>
+      <div class="d" style="font-size:23px;margin-top:18px;line-height:1.85">
+        <span class="num" style="width:34px;height:34px;font-size:18px">1</span>&nbsp; 사파리 아래 <b class="k">공유 버튼 (□↑)</b><br>
+        <span class="num" style="width:34px;height:34px;font-size:18px">2</span>&nbsp; <b class="k">홈 화면에 추가</b><br>
+        <span class="num" style="width:34px;height:34px;font-size:18px">3</span>&nbsp; 홈 화면의 <b class="k">BRIDGE 앱</b>으로 열기<br>
+        <span class="num" style="width:34px;height:34px;font-size:18px">4</span>&nbsp; 홈 탭에서 <b class="k">「알림 받기」</b> → 허용
+      </div>
+    </div>
+    <div class="col tip" style="padding:30px">
+      <div class="t" style="font-size:31px"><span class="em">🤖</span>안드로이드</div>
+      <div class="d" style="font-size:23px;margin-top:18px;line-height:1.85">
+        <span class="num" style="width:34px;height:34px;font-size:18px">1</span>&nbsp; 크롬 오른쪽 위 <b class="k">⋮ 메뉴</b><br>
+        <span class="num" style="width:34px;height:34px;font-size:18px">2</span>&nbsp; <b class="k">홈 화면에 추가</b> (앱 설치)<br>
+        <span class="num" style="width:34px;height:34px;font-size:18px">3</span>&nbsp; 홈 화면의 <b class="k">BRIDGE 앱</b>으로 열기<br>
+        <span class="num" style="width:34px;height:34px;font-size:18px">4</span>&nbsp; 홈 탭에서 <b class="k">「알림 받기」</b> → 허용
+      </div>
+    </div>
+  </div>
+  <div class="tip" style="margin-top:28px;position:relative;z-index:2;background:var(--brandSoft);border-color:var(--border)">
+    <div class="t"><span class="em">🔔</span>이런 알림이 와요</div>
+    <div class="d" style="font-size:23.5px">과제 마감 안내 · 피드백 도착 · 재시험 하루 전 · 수업 리포트 도착 등<br><span style="color:var(--faint)">아이폰은 홈 화면에 추가한 BRIDGE 앱에서만 알림을 받을 수 있어요.</span></div>
+  </div>
+  <div style="position:relative;z-index:2;margin-top:28px;display:flex;align-items:center;gap:26px;background:#fff;border:1.5px dashed var(--border);border-radius:26px;padding:22px 28px">
+    <img src="naesin/icon.jpg" loading="lazy" alt="" style="width:108px;height:108px;border-radius:26px;box-shadow:0 8px 20px rgba(43,76,111,.18)">
+    <div style="font-size:24px;line-height:1.6;color:var(--muted)">홈 화면에 이 <b class="k">BRIDGE 아이콘</b>이 생기면 성공!<br>다음부터는 아이콘만 누르면 바로 내 화면이 열려요.</div>
+  </div>
+  <div class="foot"><span>한 번만 해 두면 끝!</span><span>BRIDGE 사용 안내</span></div>
+</section>
+
+<!-- ───────────── 4. 홈 ───────────── -->
+<section class="card" id="c4">
+  <div class="cloud" style="width:460px;height:460px;right:-200px;bottom:-100px"></div>
+  <div class="top"><div class="logo"><svg viewBox="0 0 46 30"><path d="M12 29h24a9 9 0 0 0 1-17.9A12 12 0 0 0 14 9.5 9.8 9.8 0 0 0 12 29Z" fill="#6FB3E0"/></svg>BRIDGE</div><div class="page">03 / 08</div></div>
+  <div class="kicker">🏠 홈</div>
+  <h1>이번 주 할 일을<br>한눈에</h1>
+  <div class="row">
+    <div class="phone"><div class="scr"><img src="naesin/02-home-full.jpg" loading="lazy" alt=""></div></div>
+    <div class="col tips">
+      <div class="tip"><div class="t"><span class="em">📚</span>이번 주 수업</div><div class="d">이번 주에 배운 진도가 맨 위에 떠요.</div></div>
+      <div class="tip"><div class="t"><span class="em">💌</span>선생님 한마디</div><div class="d">나에게 남긴 코멘트를 바로 확인해요.</div></div>
+      <div class="tip"><div class="t"><span class="em">✅</span>To do list</div><div class="d">이번 주 과제와 <b class="k">마감 D-day</b>.<br>제출하면 줄이 그어져요.</div></div>
+      <div class="tip"><div class="t"><span class="em">🏆</span>주간 랭킹</div><div class="d">1~3등은 <b class="k">별명</b>으로만 공개돼요.</div></div>
+      <div class="tip"><div class="t"><span class="em">🔔</span>오른쪽 위 종</div><div class="d">선생님 <b class="k">공지</b>를 모아 봐요.</div></div>
+    </div>
+  </div>
+  <div class="foot"><span>아래 탭: 홈 · 시간표 · 과제 · 성적 · 수업</span><span>BRIDGE 사용 안내</span></div>
+</section>
+
+<!-- ───────────── 5. 과제 ───────────── -->
+<section class="card" id="c5">
+  <div class="cloud" style="width:460px;height:460px;left:-200px;bottom:-140px"></div>
+  <div class="top"><div class="logo"><svg viewBox="0 0 46 30"><path d="M12 29h24a9 9 0 0 0 1-17.9A12 12 0 0 0 14 9.5 9.8 9.8 0 0 0 12 29Z" fill="#6FB3E0"/></svg>BRIDGE</div><div class="page">04 / 08</div></div>
+  <div class="kicker">📝 과제</div>
+  <h1>답을 내면 바로 채점,<br>틀린 문제는 다시 풀어요</h1>
+  <div class="row">
+    <div class="col tips">
+      <div class="tip"><div class="t"><span class="num">1</span>풀고 제출</div><div class="d">제출하면 <b class="k">바로 채점</b>돼요.<br>다 못 풀었으면 「저장만 하기」로 이어서!</div></div>
+      <div class="tip"><div class="t"><span class="num">2</span>틀린 문항은 맨 위에</div><div class="d">정답은 알려주지 않아요.<br><b class="k">다시 풀어 보고</b> 모르면 질문하기.</div></div>
+      <div class="tip"><div class="t"><span class="num">3</span>채점이 이상하면 「신청」</div><div class="d">문항 옆 「신청」으로 이유를 적어<br>보내면 선생님이 확인해요.</div></div>
+      <div class="tip"><div class="t"><span class="num">4</span>지원T 피드백</div><div class="d">선생님 피드백이 오면 알림으로<br>알려드려요. (사진 제출 과제도 있어요)</div></div>
+    </div>
+    <div class="phone"><div class="scr"><img src="naesin/04-workdone.jpg" loading="lazy" alt=""></div></div>
+  </div>
+  <div class="foot"><span>인터넷이 끊겨도 답안은 폰에 저장돼요</span><span>BRIDGE 사용 안내</span></div>
+</section>
+
+<!-- ───────────── 6. 성적 ───────────── -->
+<section class="card" id="c6">
+  <div class="cloud" style="width:460px;height:460px;right:-200px;top:-120px"></div>
+  <div class="top"><div class="logo"><svg viewBox="0 0 46 30"><path d="M12 29h24a9 9 0 0 0 1-17.9A12 12 0 0 0 14 9.5 9.8 9.8 0 0 0 12 29Z" fill="#6FB3E0"/></svg>BRIDGE</div><div class="page">05 / 08</div></div>
+  <div class="kicker">📈 성적</div>
+  <h1>내 실력이 오르는 걸<br>그래프로 확인해요</h1>
+  <div class="row">
+    <div class="phone"><div class="scr"><img src="naesin/03-score.jpg" loading="lazy" alt=""></div></div>
+    <div class="col tips">
+      <div class="tip"><div class="t"><span class="em">📈</span>성장 그래프</div><div class="d">단어·리뷰테스트 등 시험마다<br>날짜별 점수가 이어져요.</div></div>
+      <div class="tip"><div class="t"><span class="em">💯</span>100점 만점 환산</div><div class="d">만점이 달라도(45/50 → 90점)<br>한 기준으로 비교해요.</div></div>
+      <div class="tip"><div class="t"><span class="em">👥</span>반 평균 · 등수</div><div class="d">괄호 안은 <b class="k">우리 반 평균</b>이에요.</div></div>
+      <div class="tip"><div class="t"><span class="em">🗓️</span>출결</div><div class="d">출석·결석 기록도 아래에서<br>함께 볼 수 있어요.</div></div>
+    </div>
+  </div>
+  <div class="foot"><span>화면 속 점수는 예시예요</span><span>BRIDGE 사용 안내</span></div>
+</section>
+
+<!-- ───────────── 7. 시간표·클리닉 + 수업 ───────────── -->
+<section class="card" id="c7">
+  <div class="cloud" style="width:460px;height:460px;left:-200px;top:-140px"></div>
+  <div class="top"><div class="logo"><svg viewBox="0 0 46 30"><path d="M12 29h24a9 9 0 0 0 1-17.9A12 12 0 0 0 14 9.5 9.8 9.8 0 0 0 12 29Z" fill="#6FB3E0"/></svg>BRIDGE</div><div class="page">06 / 08</div></div>
+  <div class="kicker">🗓️ 시간표 · 🎬 수업</div>
+  <h1>클리닉은 직접 예약,<br>수업 영상은 다시 보기</h1>
+  <div class="row" style="gap:36px">
+    <div style="width:440px;flex-shrink:0">
+      <div class="phone" style="width:440px"><div class="scr" style="height:560px"><img src="naesin/03-time.jpg" loading="lazy" alt="" style="margin-top:-60px"></div></div>
+      <div class="tip" style="margin-top:22px"><div class="t" style="font-size:25px"><span class="em">🗓️</span>클리닉 예약 (시간표 탭)</div><div class="d" style="font-size:21.5px">회차마다 <b class="k">올 수 있는 시간 하나</b>를 골라요.<br>다시 누르면 취소, 다른 칸은 옮기기.<br>정원이 차면 「마감」이에요.</div></div>
+    </div>
+    <div class="col">
+      <div class="phone" style="width:100%"><div class="scr" style="height:560px"><img src="naesin/03-class.jpg" loading="lazy" alt="" style="margin-top:-60px"></div></div>
+      <div class="tip" style="margin-top:22px"><div class="t" style="font-size:25px"><span class="em">🎬</span>수업 (영상)</div><div class="d" style="font-size:21.5px">날짜별로 올라온 수업 영상을<br><b class="k">누르면 바로 재생</b>돼요.<br>새 영상엔 NEW 표시!</div></div>
+    </div>
+  </div>
+  <div class="foot"><span>홈에 「클리닉을 예약해주세요!」가 뜨면 눌러서 예약</span><span>BRIDGE</span></div>
+</section>
+
+<!-- ───────────── 8. 학부모님 ───────────── -->
+<section class="card" id="c8" style="background: linear-gradient(180deg, #FFF8EC 0%, #FFFCF6 50%, #FFFFFF 100%);">
+  <div class="cloud" style="width:460px;height:460px;right:-200px;bottom:-120px;background:#F6E8CC"></div>
+  <div class="top"><div class="logo"><svg viewBox="0 0 46 30"><path d="M12 29h24a9 9 0 0 0 1-17.9A12 12 0 0 0 14 9.5 9.8 9.8 0 0 0 12 29Z" fill="#6FB3E0"/></svg>BRIDGE</div><div class="page">07 / 08</div></div>
+  <div class="kicker" style="color:#C08A2E">👪 학부모님께</div>
+  <h1>자녀의 학습 현황을<br>그대로 보실 수 있어요</h1>
+  <div class="sub">선생님이 보내드린 <b class="k">학부모용 링크</b>로 들어오시면<br>자녀 화면을 <b class="k">보기 전용</b>으로 보여드려요.</div>
+  <div class="tips" style="margin-top:36px;position:relative;z-index:2">
+    <div class="tip"><div class="t"><span class="em">📋</span>수업 리포트</div><div class="d">그날 배운 진도, 테스트 점수, 출결, 선생님 코멘트를 확인하세요.</div></div>
+    <div class="tip"><div class="t"><span class="em">📝</span>과제 · 채점 결과</div><div class="d">이번 주 과제를 냈는지, 점수와 틀린 문항, 피드백까지 보여요.</div></div>
+    <div class="tip"><div class="t"><span class="em">📈</span>성장 그래프</div><div class="d">시험별 점수 변화와 반 평균을 한눈에 비교할 수 있어요.</div></div>
+    <div class="tip"><div class="t"><span class="em">🔔</span>리포트 도착 알림</div><div class="d">홈 화면에 추가 후 「알림 받기」를 누르시면 <b class="k">수업 리포트가 올 때만</b> 알려드려요.<br><span style="color:var(--faint)">(설치 방법은 02번 장과 같아요)</span></div></div>
+  </div>
+  <div class="foot"><span>과제 제출·클리닉 예약은 학생 화면에서만 할 수 있어요</span><span>BRIDGE</span></div>
+</section>
+
+<!-- ───────────── 9. 자주 묻는 질문 ───────────── -->
+<section class="card" id="c9">
+  <div class="cloud" style="width:460px;height:460px;left:-220px;bottom:-160px"></div>
+  <div class="top"><div class="logo"><svg viewBox="0 0 46 30"><path d="M12 29h24a9 9 0 0 0 1-17.9A12 12 0 0 0 14 9.5 9.8 9.8 0 0 0 12 29Z" fill="#6FB3E0"/></svg>BRIDGE</div><div class="page">08 / 08</div></div>
+  <div class="kicker">❓ 자주 묻는 질문</div>
+  <h1>이럴 땐 이렇게 하세요</h1>
+  <div class="tips" style="margin-top:40px;position:relative;z-index:2;gap:18px">
+    <div class="tip"><div class="t" style="font-size:26px">Q. 코드를 잃어버렸어요</div><div class="d">선생님이 보낸 문자를 확인하거나, 선생님께 다시 받아 주세요.</div></div>
+    <div class="tip"><div class="t" style="font-size:26px">Q. 「없는 코드예요」라고 떠요</div><div class="d">JW- 뒤 숫자 4자리를 다시 확인해 주세요. 계속 안 되면 선생님께 알려 주세요.</div></div>
+    <div class="tip"><div class="t" style="font-size:26px">Q. 알림이 안 와요</div><div class="d">홈 화면에 추가한 <b class="k">BRIDGE 앱</b>으로 들어왔는지 확인하고,<br>휴대폰 <b class="k">설정 → 알림 → BRIDGE</b>를 허용해 주세요.</div></div>
+    <div class="tip"><div class="t" style="font-size:26px">Q. 제출하다 인터넷이 끊겼어요</div><div class="d">답안은 폰에 저장돼 있어요. <b class="k">다시 풀지 않아도</b> 연결되면 저절로 올라가요.</div></div>
+    <div class="tip"><div class="t" style="font-size:26px">Q. 다른 기기에서도 쓸 수 있나요?</div><div class="d">네! 같은 코드로 로그인하면 기록이 그대로 이어져요.</div></div>
+  </div>
+  <div class="foot"><span>궁금한 점은 카카오 채널로 편하게 물어봐 주세요 😊</span><span>BRIDGE</span></div>
+</section>
+
+
+    <p class="end">강사 고지원 · 송파 메가스터디학원 · 각인 입시전문학원<br>궁금한 점은 카카오 채널로 편하게 물어봐 주세요 😊</p>
+  </div>
+  <div class="cta"><a href="../">BRIDGE 바로 열기 →</a></div>
+</body>
+</html>

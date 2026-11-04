@@ -22,7 +22,12 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
   const req = e.request
   if (req.method !== 'GET' || req.mode !== 'navigate') return
-  if (new URL(req.url).origin !== self.location.origin) return
+  const url = new URL(req.url)
+  if (url.origin !== self.location.origin) return
+  // 앱 화면(index.html)만 오프라인용으로 받아 둔다 — 안내 페이지(guide/…) 같은 다른 페이지는 그냥 서버에서
+  const scope = new URL(self.registration.scope).pathname
+  const isApp = url.pathname === scope || url.pathname === `${scope}index.html`
+  if (!isApp) return
 
   e.respondWith(
     fetch(req, { cache: 'no-store' })
